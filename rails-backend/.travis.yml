@@ -1,0 +1,48 @@
+dist: trusty
+sudo: false
+language: ruby
+cache:
+  directories:
+  - vendor/bundle
+
+env:
+  global:
+  - RAILS_ENV=test
+  - CC_TEST_REPORTER_ID=5a72894db998dc106dc70701bec98e2c411984b74d2b9de55873f4c99c36a7fe
+
+rvm:
+  - 2.5.3
+
+addons:
+  postgresql: '9.6'
+
+branches:
+  only:
+  - master
+
+before_install:
+  - gem install bundler
+  - gem update --system
+
+install:
+- bundle install --path vendor/bundle
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+
+before_script:
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+
+script:
+- bundle exec rake db:schema:load
+- "./cc-test-reporter before-build"
+- bundle exec rspec spec
+- "./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.simplecov.json"
+- "./cc-test-reporter sum-coverage coverage/codeclimate.*.json"
+- "./cc-test-reporter upload-coverage"
+- "./cc-test-reporter after-build"
+- bundle exec bundle-audit update && bundle exec bundle-audit check
+
+notifications:
+  - false
