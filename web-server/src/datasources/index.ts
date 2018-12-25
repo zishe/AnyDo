@@ -1,4 +1,5 @@
 import { BookService } from './book-service';
+import { ProductService } from './product-service';
 
 // TODO: We will not pass dataSources via context because this does not work with subscriptions
 // See https://github.com/apollographql/apollo-server/issues/1526
@@ -9,5 +10,6 @@ import { BookService } from './book-service';
 // });
 
 export const dataSources = {
-    bookService: new BookService()
+    bookService: new BookService(),
+    productService: new ProductService()
 };
