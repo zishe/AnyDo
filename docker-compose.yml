@@ -61,13 +61,6 @@ services:
     volumes:
       - '.:/server'
 
-
-    command: sidekiq -C server/config/sidekiq.yml.erb
-    volumes:
-      - '.:/app'
-    env_file:
-      - '.env'
-
   cable:
     depends_on:
       - 'redis'

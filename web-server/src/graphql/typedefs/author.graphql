@@ -1,0 +1,24 @@
+type Author {
+    id: ID!
+    name: String!
+    books: [Book!]!
+}
+
+type Query {
+    authors: [Author!]!
+    author(id: ID!): Author!
+}
+
+type Mutation {
+    createAuthor(name: String!): Author!
+    updateAuthor(authorId: ID!, name: String!): Author!
+}
+
+type Subscription {
+    authorMutated: AuthorMutationPayload!
+}
+
+type AuthorMutationPayload {
+    mutation: MutationType!
+    node: Author!
+}
