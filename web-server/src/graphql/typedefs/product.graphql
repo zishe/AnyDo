@@ -1,16 +1,11 @@
 type Product {
     id: ID!
     name: String!
-    description: String!
+    description: String
 }
 
 type Query {
     products: [Product!]!
-}
-
-input ProductInput {
-    name: String!
-    description: String
 }
 
 type Subscription {
