@@ -1,4 +1,5 @@
 import { DataSource } from 'apollo-datasource';
+import Product from '../db/models/Product';
 
 export class ProductService extends DataSource {
     constructor() {
@@ -8,13 +9,7 @@ export class ProductService extends DataSource {
     initialize() {}
 
     getProducts() {
-        return Promise.resolve([
-            { id: 1, name: 'Rice', description: '' },
-            { id: 2, name: 'Potato', description: '' },
-            { id: 3, name: 'Tom Yam', description: '' },
-            { id: 4, name: 'Fried chicken', description: '' },
-            { id: 5, name: 'Tea', description: '' }
-        ]);
+        return Product.query();
     }
 }
 
