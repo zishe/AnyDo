@@ -30,7 +30,7 @@ export interface AuthorDialogProps extends WithStyles<typeof styles> {
     onSave: SaveAuthorFunc;
     onCancel: React.EventHandler<any>;
 }
- 
+
 export const AuthorDialog = withStyles(styles)(
     class extends React.Component<AuthorDialogProps> {
         render() {
