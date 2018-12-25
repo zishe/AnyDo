@@ -1,6 +1,6 @@
 const objection = require('objection');
 const uuid = require('uuid/v4');
-const knex = require('../db/config');
+const knex = require('../config');
 const _ = require('lodash');
 
 objection.Model.knex(knex);
