@@ -1,34 +1,75 @@
-require('dotenv').config();
-
-const {
-  DB_HOST,
-  DB_USER,
-  DB_PASSWORD,
-  DB_DATABASE,
-} = process.env;
-
-const defaults = {
-  client: 'mysql',
-  connection: {
-    host: DB_HOST,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    database: DB_DATABASE,
-  },
-};
+const path = require('path');
+const BASE_PATH = path.join(__dirname, 'src', 'db');
+// Update with your config settings.
 
 module.exports = {
 
   development: {
-    ...defaults,
-    debug: true,
-    useNullAsDefault: true,
+    client: 'postgresql',
+    connection: {
+      database: 'any_do_dev',
+      user:     process.env.DB_USER,
+      password: process.env.DB_PASS
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: path.join(BASE_PATH, 'migrations')
+    },
+    seeds: {
+      directory: path.join(BASE_PATH, 'seeds')
+    }
+  },
+
+  test: {
+    client: 'postgresql',
+    connection: {
+      database: 'any_do_test',
+      user:     process.env.DB_USER,
+      dramaturg: process.env.DB_PASS
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: path.join(BASE_PATH, 'migrations')
+    },
+    seeds: {
+      directory: path.join(BASE_PATH, 'seeds')
+    }
+  },
+
+  staging: {
+    client: 'postgresql',
+    connection: {
+      database: 'any_do_test',
+      user:     process.env.DB_USER,
+      dramaturg: process.env.DB_PASS
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
   },
 
   production: {
-    ...defaults,
-    debug: false,
-    useNullAsDefault: true,
-  },
+    client: 'postgresql',
+    connection: {
+      database: 'any_do_dev',
+      user:     process.env.DB_USER,
+      password: process.env.DB_PASS
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
 
 };

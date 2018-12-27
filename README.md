@@ -1,4 +1,1 @@
 # AnyDo
-
-## Root project
-

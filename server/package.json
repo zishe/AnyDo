@@ -1,35 +1,35 @@
 {
-  "name": "any-do-prototype",
-  "version": "0.0.1",
+  "name": "apollo-bookstore-server",
+  "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "dev": "./node_modules/.bin/nodemon --inspect src/server.js",
-    "start": "NODE_ENV=production node src/server.js"
+    "start": "ts-node src/index.ts",
+    "start:debug": "ndb ts-node src/index.ts",
+    "dev": "nodemon --watch src -e ts,graphql --exec yarn start",
+    "build": "tsc",
+    "format": "prettier --write 'src/**/*.ts'"
   },
-  "author": "Jack Chapple",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-express": "^2.3.1",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
+    "apollo-datasource": "^0.2.1",
+    "apollo-server": "^2.3.1",
     "dotenv": "^6.2.0",
-    "express": "^4.16.4",
     "graphql": "^14.0.2",
-    "jsonwebtoken": "^8.4.0",
+    "graphql-redis-subscriptions": "^2.0.0",
     "knex": "^0.16.3",
-    "lodash": "^4.17.11",
-    "mysql": "^2.16.0",
+    "merge-graphql-schemas": "^1.5.8",
     "objection": "^1.4.0",
-    "objection-graphql": "^0.4.4"
+    "pg": "^7.7.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "eslint": "^5.11.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "jest": "^23.6.0",
-    "nodemon": "^1.18.9"
+    "@types/node": "^10.12.18",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.15.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
   }
 }

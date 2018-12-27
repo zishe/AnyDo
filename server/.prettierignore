@@ -1,9 +1,0 @@
-.git/
-.vscode/
-caverage/
-node_modules/
-tests/
-static/
-
-package.json
-package-lock.json
