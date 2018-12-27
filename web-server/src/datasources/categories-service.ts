@@ -1,6 +1,6 @@
 const uuid = require('uuid/v4');
 import { DataSource } from 'apollo-datasource';
-import { Category } from '../db/models/Category';
+const Category = require('../db/models/Category');
 
 export class CategoryService extends DataSource {
     constructor() {
@@ -11,13 +11,6 @@ export class CategoryService extends DataSource {
 
     getCategories() {
         return Category.query();
-        return Promise.resolve([
-            { id: uuid(), name: 'Rice', description: '' },
-            { id: uuid(), name: 'Potato', description: '' },
-            { id: uuid(), name: 'Tom Yam', description: '' },
-            { id: uuid(), name: 'Fried chicken', description: '' },
-            { id: uuid(), name: 'Tea', description: '' }
-        ]); //Category.query();
     }
 }
 
