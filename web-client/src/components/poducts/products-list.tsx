@@ -39,7 +39,7 @@ export class ProductsList extends Component<ProductsListProps> {
                     // <Link key={product.name} to={`/product/${product.id}`}>
                     <Products.Card key={product.name}>
                         <Products.CardMedia
-                            // image={product.image}
+                            image={product.image}
                             title={product.name}
                             onClick={() => {
                                 // this.handleClick(product);

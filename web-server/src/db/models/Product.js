@@ -12,7 +12,8 @@ class Product extends Model {
       properties: {
         id: { type: 'uuid' },
         name: { type: 'string', minLength: 1, maxLength: 255 },
-        description: { type: 'string', minLength: 0, maxLength: 1000 }
+        description: { type: 'string', minLength: 0, maxLength: 1000 },
+        image: { type: 'string', minLength: 0, maxLength: 1000 }
       }
     };
   }
