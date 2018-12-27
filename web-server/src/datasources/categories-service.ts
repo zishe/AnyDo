@@ -1,22 +1,22 @@
 const uuid = require('uuid/v4');
 import { DataSource } from 'apollo-datasource';
-import Product from '../db/models/Product';
+import Category from '../db/models/Category';
 
-export class ProductService extends DataSource {
+export class CategoryService extends DataSource {
     constructor() {
         super();
     }
 
     initialize() {}
 
-    getProducts() {
+    getCategories() {
         return Promise.resolve([
             { id: uuid(), name: 'Rice', description: '' },
             { id: uuid(), name: 'Potato', description: '' },
             { id: uuid(), name: 'Tom Yam', description: '' },
             { id: uuid(), name: 'Fried chicken', description: '' },
             { id: uuid(), name: 'Tea', description: '' }
-        ]); //Product.query();
+        ]); //Category.query();
     }
 }
 

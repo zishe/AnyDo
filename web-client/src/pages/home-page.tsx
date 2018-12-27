@@ -9,6 +9,7 @@ import {
     Header,
     PublishersContainer
 } from '../components';
+// import { CategoriesContainer } from '../components/categories/categories-list';
 import { ProductsContainer } from '../components/poducts/products-container';
 
 const styles = (theme: Theme) =>
@@ -44,7 +45,7 @@ export const HomePage = withStyles(styles)(({ classes }: HomePageProps) => {
     return (
         <FullHeightVerticalContainer>
             <Header />
-            <div className={classes.topPanel}>
+            {/* <div className={classes.topPanel}>
                 <div className={classes.leftPanel}>
                     <PublishersContainer />
                 </div>
@@ -54,10 +55,10 @@ export const HomePage = withStyles(styles)(({ classes }: HomePageProps) => {
             </div>
             <div className={classes.bottomPanel}>
                 <BooksContainer />
-            </div>
-            <div className={classes.bottomPanel}>
-                <ProductsContainer />
-            </div>
+            </div> */}
+
+            {/* <CategoriesContainer /> */}
+            <ProductsContainer />
         </FullHeightVerticalContainer>
     );
 });

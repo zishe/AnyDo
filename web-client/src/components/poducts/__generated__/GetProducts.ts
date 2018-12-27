@@ -9,7 +9,7 @@ export interface GetProducts_products {
   __typename: "Product";
   id: string;
   name: string;
-  description: string;
+  description: string | null;
 }
 
 export interface GetProducts {

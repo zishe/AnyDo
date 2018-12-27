@@ -1,0 +1,19 @@
+type Category {
+    id: ID!
+    name: String!
+    description: String
+    image: String
+}
+
+type Query {
+    categories: [Category!]!
+}
+
+type Subscription {
+    productMutated: CategoryMutationPayload!
+}
+
+type CategoryMutationPayload {
+    mutation: MutationType!
+    node: Category!
+}
