@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import gql from 'graphql-tag';
 import { DefaultQuery } from '..';
-import { GET_PRODUCTS } from './categories-queries';
+import { GET_CATEGORIES } from './categories-queries';
 import { CategoriesList } from './categories-list';
 
 export class CategoriesContainer extends React.Component {
@@ -10,8 +10,10 @@ export class CategoriesContainer extends React.Component {
 
     render() {
         return (
-            <DefaultQuery query={GET_PRODUCTS}>
+            <DefaultQuery query={GET_CATEGORIES}>
                 {({ data: { categories }, subscribeToMore }) => {
+                    console.log(categories);
+
                     return <CategoriesList categories={categories} />;
                 }}
             </DefaultQuery>

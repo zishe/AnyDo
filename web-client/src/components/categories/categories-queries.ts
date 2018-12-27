@@ -1,11 +1,12 @@
 import gql from 'graphql-tag';
 
-export const GET_PRODUCTS = gql`
-    query GetProducts {
+export const GET_CATEGORIES = gql`
+    query GetCategories {
         categories {
             id
             name
             description
+            image
         }
     }
 `;

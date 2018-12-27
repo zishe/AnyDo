@@ -18,5 +18,5 @@ export { TextInput } from './form/text-input';
 export { Header } from './header/header';
 export { PublishersContainer } from './publishers/publishers-container';
 export { getTheme } from './theme';
-export { ProductsContainer } from './poducts/products-container'
-export { CategoriesContainer } from './categories/categories-container'
+export { ProductsContainer } from './poducts/products-container';
+export { CategoriesContainer } from './categories/categories-container';

@@ -5,9 +5,10 @@ import gql from 'graphql-tag';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import Categories from './blocks';
+import { GetCategories_categories } from './__generated__/GetCategories';
 
 export interface CategoryProps {
-    products: Array<any>;
+    categories: Array<GetCategories_categories>;
 }
 
 export class CategoriesList extends Component<CategoryProps> {
@@ -19,14 +20,13 @@ export class CategoriesList extends Component<CategoryProps> {
                         <Categories.Item key={category.id}>
                             <img src={category.image} alt={category.name} />
                             {/* <Categories.Title
-                        title={category.name}
-                        // subtitle={<span>by: {category.author}</span>}
-                        // actionIcon={
-                        //   <IconButton>
-                        //     <InfoIcon />
-                        //   </IconButton>
-                        // }
-                      /> */}
+                                title={category.name}
+                                // actionIcon={
+                                //   <IconButton>
+                                //     <InfoIcon />
+                                //   </IconButton>
+                                // }
+                            /> */}
                         </Categories.Item>
                     ))}
                 </Categories.CategoryPanel>

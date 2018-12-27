@@ -9,7 +9,7 @@ import {
     Header,
     PublishersContainer
 } from '../components';
-// import { CategoriesContainer } from '../components/categories/categories-list';
+import { CategoriesContainer } from '../components/categories/categories-container';
 import { ProductsContainer } from '../components/poducts/products-container';
 
 const styles = (theme: Theme) =>
@@ -57,7 +57,7 @@ export const HomePage = withStyles(styles)(({ classes }: HomePageProps) => {
                 <BooksContainer />
             </div> */}
 
-            {/* <CategoriesContainer /> */}
+            <CategoriesContainer />
             <ProductsContainer />
         </FullHeightVerticalContainer>
     );

@@ -1,6 +1,6 @@
 const uuid = require('uuid/v4');
 import { DataSource } from 'apollo-datasource';
-import Product from '../db/models/Product';
+import { Product } from '../db/models/Product';
 
 export class ProductService extends DataSource {
     constructor() {
