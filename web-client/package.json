@@ -1,5 +1,5 @@
 {
-  "name": "apollo-bookstore-client",
+  "name": "any-do-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -31,6 +31,7 @@
     "react": "^16.6.3",
     "react-apollo": "^2.3.2",
     "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1",
     "subscriptions-transport-ws": "^0.9.15",
     "yup": "^0.26.6"
   },
@@ -44,14 +45,13 @@
     "@types/react-dom": "16.0.11",
     "apollo": "^2.1.7",
     "prettier": "^1.15.3",
-    "react-scripts": "2.1.1",
     "typescript": "3.2.2"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": [
-    ">0.2%",
+    ">1%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"

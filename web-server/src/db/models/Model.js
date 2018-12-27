@@ -10,9 +10,9 @@ class Model extends objection.Model {
     this.id = uuid();
   }
 
-  // $beforeValidate(jsonSchema, json, opt) {
-  //   return jsonSchema;
-  // }
+  $beforeValidate(jsonSchema, json, opt) {
+    return jsonSchema;
+  }
 
   $beforeUpdate() {
     this.updated_at = new Date();

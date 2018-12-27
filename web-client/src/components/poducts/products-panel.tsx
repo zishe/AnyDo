@@ -32,10 +32,7 @@ export class ProductsPanel extends React.Component<ProductsPanelProps> {
                         </TableHead>
                         <TableBody>
                             {products.map(product => (
-                                <TableRow
-                                    hover
-                                    key={product.id}
-                                >
+                                <TableRow hover key={product.id}>
                                     <TableCell>{product.name}</TableCell>
                                 </TableRow>
                             ))}

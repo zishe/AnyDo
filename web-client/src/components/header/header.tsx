@@ -31,7 +31,7 @@ export const Header = withStyles(styles)(
                             color="inherit"
                             className={classes.title}
                         >
-                            GraphQL Bookstore
+                            AnyDo
                         </Typography>
                         <SettingsButton />
                     </Toolbar>

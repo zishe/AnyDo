@@ -1,10 +1,10 @@
-Apollo Bookstore Client
+AnyDo Client
 =======================
-React Apollo based bookstore client.
+React Apollo based app client.
 
 Dev Build
 ---------
-Make sure that the .env file is pointing to the correct server URLs. By default it points to the Apollo Bookstore Server.
+Make sure that the .env file is pointing to the correct server URLs. By default it points to the Apollo Server.
 
 ```bash
 $ yarn
