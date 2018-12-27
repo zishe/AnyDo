@@ -9,8 +9,8 @@ export interface GetProducts_products {
   __typename: "Product";
   id: string;
   name: string;
-  image: string | null;
   description: string | null;
+  image: string | null;
 }
 
 export interface GetProducts {
