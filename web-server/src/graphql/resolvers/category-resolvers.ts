@@ -9,7 +9,7 @@ export default {
         // category(parent, args) {
         //     return dataSources.categoryService.getBook(args.id);
         // }
-    },
+    }
 
     // Subscription: {
     //     categoryMutated: {

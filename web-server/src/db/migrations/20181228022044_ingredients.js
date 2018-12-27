@@ -1,4 +1,4 @@
-exports.up = (knex, Promise) => knex.schema.createTable('categories', t => {
+exports.up = (knex, Promise) => knex.schema.createTable('ingredients', t => {
   t.uuid('id').primary();
   t.string('name', 256).unique().index();
   t.text('description');
@@ -7,4 +7,4 @@ exports.up = (knex, Promise) => knex.schema.createTable('categories', t => {
   t.timestamp('updated_at', true).notNullable().defaultTo(knex.fn.now());
 });
 
-exports.down = (knex, Promise) => knex.schema.dropTable('categories');
+exports.down = (knex, Promise) => knex.schema.dropTable('ingredients');
