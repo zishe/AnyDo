@@ -1,5 +1,5 @@
-[submodule "rails-admin"]
-	path = rails-admin
+[submodule "admin"]
+	path = admin
 	url = git@github.com:zishe/ServiceAppBackend.git
 [submodule "server"]
 	path = server
