@@ -1,5 +1,0 @@
-enum MutationType {
-    CREATED
-    UPDATED
-    DELETED
-}

@@ -1,3 +1,6 @@
 [submodule "rails-admin"]
 	path = rails-admin
 	url = git@github.com:zishe/ServiceAppBackend.git
+[submodule "server"]
+	path = server
+	url = git@github.com:zishe/anydo-server.git
