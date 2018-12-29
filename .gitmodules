@@ -1,6 +1,6 @@
 [submodule "admin"]
 	path = admin
-	url = git@github.com:zishe/ServiceAppBackend.git
+	url = git@github.com:zishe/anydo-admin.git
 [submodule "server"]
 	path = server
 	url = git@github.com:zishe/anydo-server.git
