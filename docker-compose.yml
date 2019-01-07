@@ -1,0 +1,58 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: passw0rd
+      ALLOW_IP_RANGE: 0.0.0.0/0
+    ports:
+      - 54321:5432
+
+  admin:
+    build:
+      dockerfile: Dockerfile
+      context: ./admin
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: postgres://postgres:passw0rd@db:5432/postgres
+    volumes:
+      - ./admin:/usr/src/admin
+    command: bundle exec rails server -b 0.0.0.0 -p 3000
+    stdin_open: true
+    tty: true
+
+  client:
+    build:
+      context: ./client
+    depends_on:
+      - admin
+    command: yarn dev:web
+    volumes:
+      - ./client:/usr/src/client
+      - ./client/node_modules:/usr/src/client/node_modules
+    ports:
+      - "3001:3001"
+
+  server:
+    build:
+      context: ./server
+    depends_on:
+      - admin
+    command: yarn dev
+    environment:
+      DB_USER: postgres
+      DB_PASS: passw0rd
+      DB_NAME: postgres
+      DB_HOST: db
+    volumes:
+      - ./server:/usr/src/server
+      - ./server/node_modules:/usr/src/server/node_modules
+    ports:
+      - "4000:4000"
