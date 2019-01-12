@@ -3,13 +3,12 @@
 [![Dependency Status](https://david-dm.org/zishe/anydo-server.svg)](https://david-dm.org/zishe/anydo-server)
 [![devDependencies Status](https://david-dm.org/zishe/anydo-server/dev-status.svg)](https://david-dm.org/zishe/anydo-server)
 
-AnyDo
-=====
+# AnyDo
 
-Dev Build for local machine (without docker)
---------------------------------------------
+## Dev Build for local machine (without docker)
 
-#### There 3 applications, so it will be 3 console processes.
+
+There 3 applications, so it will be 3 console processes.
 
 ### Admin
 
@@ -36,8 +35,7 @@ $ yarn
 $ yarn dev
 ```
 
-Docker
-------
+# Docker
 
 ```bash
 $ docker-compose up
